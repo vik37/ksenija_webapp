@@ -1,0 +1,82 @@
+.all-users-block{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(0, 0, 0);
+}
+.users-hading-block > h2{
+  text-align: center;
+  margin: 20px 0;
+  font-family:'Rye';
+  text-shadow: 1px 1px rgb(71, 99, 223);
+  letter-spacing: 2.8px;
+  font-size: 2.3rem;
+}
+.all-users-body{
+  padding: 40px 5px;
+}
+.user-main-block{
+  background-color: rgb(20, 35, 102);
+  padding: 50px 100px;
+}
+.user-block{
+  color: rgb(255, 255, 255);
+}
+.user-block>h4{
+  font-size: 1.4rem;
+  font-family:'Roboto Mono';
+  letter-spacing: 1.1px;
+  font-weight: 800;
+}
+.user-block>p{
+  font-size: 1.2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 1.2px;
+}
+.user-block > button{
+  font-size: 1.1rem;
+  font-weight: bolder;
+  width: 140px;
+  border: none;
+  outline: none;background-color: rgb(0, 0, 0);
+  text-shadow: 0 0 3px rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.user-block>button:hover{
+  background-color: rgb(146, 3, 3);
+}
+.user-block>button:active{
+  background-color: rgb(224, 98, 98);
+  box-shadow: 0 0 10px 2px rgb(224, 98, 98);
+}
+.all-users-footer{
+  background-color: rgb(110, 109, 109);
+}
+.all-users-footer > h5{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 1.2px;
+}
+.all-users-footer > h5>b{
+  background-color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+  padding: 0 10px;
+  border: 2px solid rgb(20, 35, 102);
+  border-radius: 20px;
+}
+@media screen and (max-width: 370px) {
+  .user-main-block{
+    padding: 5px 20px;
+  }
+  .all-users-footer > h5{
+    font-size: 0.8rem;
+  }
+  .all-users-footer > h5>b{
+    background-color: rgba(20, 35, 102,0);
+    border: none;
+  }
+}

@@ -1,0 +1,203 @@
+.biography{
+  padding: 0;
+  box-shadow: 0 0 25px 15px rgb(0, 0, 0);
+}
+.row{
+  margin: 0;
+}
+.left-block-img, .right-block-img{
+  padding-left: 0;
+  padding-right: 0;
+}
+.left-img, .right-img{
+  width: 100%;
+  height: 100%;
+}
+
+.article-biography{
+  background-color: rgba(148, 147, 147, 0.7);
+  border-right: 10px solid;
+  border-left: 10px solid;
+  border-image: linear-gradient(190deg, rgba(8,95,108,1) 0%,
+                rgba(0,212,255,0.8690826672465861) 53%, rgba(7,5,48,1) 100%);
+  border-image-width: 15px;
+  border-image-slice: 40% 90% fill;
+  border-image-repeat:repeat;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.left-brd, .right-brd{
+  background-image:
+  linear-gradient(190deg, rgba(8,95,108,1) 0%,
+  rgba(0,212,255,0.8690826672465861) 53%, rgba(7,5,48,1) 100%);
+  background-repeat: repeat-y;
+  width: 24px;
+  height: 100%;
+}
+
+.biography-block-title{
+  height: 30vh;
+  width: 100%;
+  background-image: url("../../../assets/img/ezgif.com-gif-maker.gif");
+  background-size: 150px;
+  background-position:right;
+  background-repeat:no-repeat;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  border-top-left-radius: 250px;
+  border-bottom-left-radius: 250px;
+}
+.biography-block-title > h2{
+  margin-top: 100px;
+  color: #f7f745;
+  text-shadow: -1px 1px rgb(255, 33, 33);
+  font-size: 1.6em;
+  letter-spacing: 2.3px;
+  font-family: 'Rye';
+}
+.biography-title-img{
+  width: 15vw;
+  height: 100%;
+  margin-right: 60px;
+  background-image: url("../../../assets/img/ksenija/image1002.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 150px;
+  box-shadow: -20px -1px 20px rgba(255, 255, 255,0.4);
+}
+.middle-main-text{
+  width: 99.4%;
+}
+.middle-main-text > p{
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 0.8px;
+  color: rgb(102, 7, 112);
+  filter: hue-rotate(90deg);
+}
+.middle-main-text > p::first-letter{
+  font-size: 1.8em;
+  font-weight: bolder;
+  color: rgb(112, 155, 12);
+  text-shadow: 1px 1px 3px rgb(255, 255, 255);
+}
+.biography-phoneSize-img{
+  display: none;
+}
+.books-images{
+  padding: 10px 35px;
+  border-top: 1px dashed rgba(155, 152, 152, 0.6);
+  border-bottom: 1px dashed rgba(99, 97, 97, 0.6);
+}
+.book-img{
+  width: 120px;
+  height: 150px;
+  padding: 10px 0;
+  border-top: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
+  transition: 3s;
+}
+
+.book-img:hover{
+  width: 170px;
+  height: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .left-brd, .right-brd{
+    display: none;
+  }
+  .biography-block-title{
+    margin-left: 0;
+    height: 20vh;
+  }
+  .biography-block-title > h2{
+    margin-top: 50px;
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .left-img, .right-img{
+    height: 70vh;
+  }
+  .middle-main-text > p{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 0.7em;
+  }
+  .books-images{
+    padding: 0 0;
+  }
+  .book-img:hover{
+    width: 120px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 767px){
+  .article-biography{
+    border-image: none;
+    border: none;
+  }
+  .left-img{
+    display: none;
+  }
+  .biography-title-img{
+    background-size: 120px;
+  }
+  .book-img{
+    width: 80px;
+    height: 110px;
+  }
+
+}
+@media screen and (max-width: 550px){
+  .left-img, .right-img{
+    display: none;
+  }
+  .biography-block-title{
+    height: 15vh;
+    border-radius: 0;
+    background-size: 60px;
+    background-repeat:repeat-y;
+  }
+  .biography-block-title > h2{
+    margin-left: 10px;
+  }
+  .biography-title-img{
+    display: none;
+  }
+  .biography-phoneSize-img{
+    display: block;
+    width: 200px;
+    height: 270px;
+    margin: 20px 30px;
+    outline: 1px dotted rgba(0, 0, 0, 0.7);
+    outline-offset: 5px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+  .books-images{
+    display: none;
+  }
+  @media screen and (max-width: 250px) {
+    .biography-phoneSize-img{
+      margin: 5px 5px;
+    }
+  }
+
+  @media screen and  (max-height: 375px) {
+    .biography-block-title{
+      height: 500px;
+    }
+  }
+}
+

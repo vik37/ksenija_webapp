@@ -1,0 +1,10 @@
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\bin\Release\netcoreapp3.1\BookWriter.DtoModels.deps.json
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\bin\Release\netcoreapp3.1\BookWriter.DtoModels.dll
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\bin\Release\netcoreapp3.1\BookWriter.DtoModels.pdb
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\obj\Release\netcoreapp3.1\BookWriter.DtoModels.csproj.AssemblyReference.cache
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\obj\Release\netcoreapp3.1\BookWriter.DtoModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\obj\Release\netcoreapp3.1\BookWriter.DtoModels.AssemblyInfoInputs.cache
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\obj\Release\netcoreapp3.1\BookWriter.DtoModels.AssemblyInfo.cs
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\obj\Release\netcoreapp3.1\BookWriter.DtoModels.csproj.CoreCompileInputs.cache
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\obj\Release\netcoreapp3.1\BookWriter.DtoModels.dll
+C:\Users\vikto\source\repos\Bussiness_projects\BookWriter_Asp.Net_WebApi\BookWriter.DtoModels\obj\Release\netcoreapp3.1\BookWriter.DtoModels.pdb

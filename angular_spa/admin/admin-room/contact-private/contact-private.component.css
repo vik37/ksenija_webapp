@@ -1,0 +1,112 @@
+.contact-block-heading > h1{
+  color: rgb(0, 0, 0);
+  font-size: 1.9rem;
+}
+.contact-block-heading > p{
+  font-size: 1.1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.9px;
+}
+.contact{
+  border-left: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
+  margin-top: 50px;
+  background-color: rgba(156, 156, 156,0.1);
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.7) ;
+}
+.contact-block-number{
+  background-color: rgb(0,0,0);
+  outline: 2px solid rgb(131, 130, 130);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.contact-block-number > h3{
+  padding: 10px 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 255, 255);
+  width: 50px;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 2rem;
+  box-shadow: -1px 0 10px 10px  rgba(150, 150, 150,0.4) inset;
+}
+.contact-block-name, .contact-block-email{
+  border-left: 1px solid rgb(0,0,0);
+  border-right: 1px solid rgb(0,0,0);
+  border-bottom: 4px double rgba(0,0,0,0.4);
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 24px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+.contact-block-name > h5, .contact-block-email > h5{
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+}
+
+.contact-block-name > p{
+  font-size: 1.2rem;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: rgba(150, 150, 150,1);
+  text-shadow: 1px 1px rgb(0, 0, 0);
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+.contact-block-email > a{
+  font-size: 1rem;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+.contact-block-msg-title{
+  margin-bottom: 20px;
+  background-color: rgba(150, 150, 150,0.4);
+  box-shadow: 0 0 7px 2px rgb(131, 130, 130);
+}
+.contact-block-msg-title > h5{
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2.1px;
+  text-shadow: 1px 0 rgb(255, 255, 255);
+  text-decoration: underline;
+}
+.contact-block-msg{
+  box-shadow: 0 0 8px 3px rgb(131, 130, 130);
+  margin-bottom: 30px;
+  padding: 20px 20px;
+}
+.contact-block-msg >p{
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: cursive;
+}
+.contact-btn-remove{
+  width: 160px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 576px) {
+  .contact-block-number{
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border-top: 2px solid rgba(0,0,0,0.7);
+  }
+  .contact-block-number > h3{
+    font-size: 1.6rem;
+    padding: 0;
+    text-align: center;
+    color: rgb(0,0,0);
+  }
+  .contact-block-name, .contact-block-email{
+    border: none;
+  }
+  .contact-block-btn-remove{
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-bottom: 5px;
+  }
+  .contact-btn-remove{
+    width: 80px;
+  }
+}

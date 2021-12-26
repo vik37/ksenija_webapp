@@ -1,0 +1,35 @@
+.article-box{
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid rgba(0,0,0,0.7);
+}
+.article-box:hover{
+  border-top: 5px solid rgb(99, 0, 0);
+}
+.article-box > h3{
+  font-size: 1.2rem;
+  font-family:'Roboto Mono';
+}
+.article-box > p{
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+.article-box > button{
+  color: rgba(0,0,0,0.7);
+  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+  border-radius: 10px;
+}
+@media screen and (max-width: 326px){
+  .article-box{
+    padding:0;
+  }
+  .article-box > h3{
+    font-size: 0.9rem;
+  }
+  .article-box > p{
+    font-size: 0.4rem;
+  }
+  h2{
+    font-size: 0.9rem;
+  }
+}

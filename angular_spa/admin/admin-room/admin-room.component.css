@@ -1,0 +1,70 @@
+.admin-navigation{
+  background: linear-gradient(90deg, rgba(0,22,127,1) 0%, rgba(3,26,77,1) 32%, rgba(0,0,0,1) 75%);
+  padding: 10px 60px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #ffffff;
+
+}
+.admin-navigation > h2{
+  font-family:'Roboto Mono';
+  letter-spacing: 2.3px;
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 3px 1px  rgba(86, 153, 184, 0.7);
+}
+.admin-nav{
+  background-image: radial-gradient(circle, rgba(13,13,114,1) 0%, rgba(0,23,255,0.8690826672465861) 50%, rgba(7,5,48,1) 100%);
+  border: 0.5px solid rgba(255, 255, 255,0.4);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px;
+  border-radius: 20px;
+}
+.admin-nav > button{
+  margin: 0 15px;
+  color: rgba(255, 255, 255,0.8);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+  font-weight: 500;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.9em;
+  border-radius: 100px;
+}
+
+@media screen and (max-width: 487px){
+  .admin-navigation > h2{
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+    padding: 5px 5px;
+    flex-direction: column;
+  }
+  .admin-nav{
+    flex-direction: column;
+    align-items: center;
+  }
+  .admin-nav > button{
+    margin: 10px 0;
+    width: 200px;
+  }
+}
+@media screen and (max-width: 326px){
+  .admin-navigation > h2{
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+    padding: 0 0;
+    flex-direction: column;
+  }
+  .admin-nav{
+    border: none;
+    background-image: none;
+    margin-left: 50px;
+    justify-content:flex-start;
+  }
+  .admin-nav > button{
+    width: 120px;
+    font-size: 0.7rem;
+  }
+}

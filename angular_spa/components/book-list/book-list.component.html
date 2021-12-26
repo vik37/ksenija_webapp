@@ -1,0 +1,77 @@
+<div *ngIf="loading">
+  <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+<section class="container container-market container-market-domestic">
+  <br />
+  <hr class="book-list-line" />
+  <br />
+  <div class="col-md-12 market market-domestic">
+    <h5 [translate]="'books.domestic'"></h5>
+  </div>
+  <br />
+  <br />
+  <div class="card-group">
+      <div class="col-xs-12 col-sm-8 col-md-4 mb-3" *ngFor="let book of domesticBooks">
+        <div class="card" *ngIf="!isUserAuthenticated()">
+          <img [src]="bookImgUrl+book.imageName" *ngIf="book.imageName != null"
+              class="card-img-top" [alt]="book.imageName" [routerLink]="['/book',book.id]"
+              (load)="onLoad()" />
+          <img src={{emptyBookImgUrl}} *ngIf="book.imageName == null"
+              class="card-img-top" alt="empty image" (load)="onLoad()" />
+          <div class="card-body">
+            <h5 class="card-title">{{ book.name }}</h5>
+          </div>
+        </div>
+        <div class="card" *ngIf="isUserAuthenticated()">
+          <img [src]="bookImgUrl+book.imageName" *ngIf="book.imageName != null"
+              class="card-img-top" [alt]="book.imageName"
+              [routerLink]="['/book',book.id,'user',username]" (load)="onLoad()" />
+          <img src={{emptyBookImgUrl}} *ngIf="book.imageName == null"
+              class="card-img-top" alt="empty image" (load)="onLoad()" />
+          <div class="card-body">
+            <h5 class="card-title">{{ book.name }}</h5>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<section class="container container-market container-market-foreign">
+  <br />
+  <hr />
+  <br />
+  <div class="col-md-12 market market-foreign">
+    <h5 [translate]="'books.foreign'"></h5>
+  </div>
+  <br />
+  <br />
+  <div class="card-group">
+    <div class="col-md-4 mb-3" *ngFor="let book of foreignBooks">
+      <div class="card" *ngIf="!isUserAuthenticated()">
+        <img [src]="bookImgUrl+book.imageName"
+              *ngIf="book.imageName != null"
+              class="card-img-top" [alt]="book.imageName" [routerLink]="['/book',book.id]"
+              (load)="onLoad()" />
+        <img src={{emptyBookImgUrl}} *ngIf="book.imageName == null"
+            class="card-img-top" alt="empty image" (load)="onLoad()" />
+        <div class="card-body">
+          <h5 class="card-title">{{ book.name }}</h5>
+        </div>
+      </div>
+      <div class="card" *ngIf="isUserAuthenticated()">
+        <img [src]="bookImgUrl+book.imageName"
+              *ngIf="book.imageName != null"
+              class="card-img-top" [alt]="book.imageName"
+              [routerLink]="['/book',book.id,'user',username]" (load)="onLoad()" />
+        <img src={{emptyBookImgUrl}} *ngIf="book.imageName == null"
+            class="card-img-top" alt="empty image" (load)="onLoad()" />
+        <div class="card-body">
+          <h5 class="card-title">{{ book.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
+<footer>
+  <app-footer></app-footer>
+</footer>

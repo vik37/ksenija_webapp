@@ -1,0 +1,111 @@
+<section [ngClass]="!backToChangeBooks?'links':'links-none'" class="container">
+  <h3>Change Links</h3>
+  <br />
+  <hr />
+  <br />
+  <div class="row">
+    <div class="link-block col-md-12" *ngFor="let link of currentHpLinks; let i = index">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+          <h4><a [href]="link.link" target="_blank">{{link.name}}</a></h4>
+        </div>
+        <div class="col-md-2">
+          <button [hidden]="link.id === undefined" class="btn btn-danger" (click)="removeArticle(link.id)" name="delete">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+              <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+            </svg>
+          </button>
+          <div class="new-link-block col-md-5" [hidden]="link.id !== undefined">
+            <h6>new</h6>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <br />
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-dark btn-add-link" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Link</button>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-add-back" (click)="backToChangeBook()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-backward" viewBox="0 0 16 16">
+          <path d="M.5 3.5A.5.5 0 0 1 1 4v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v2.94l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L8.5 8.752v2.94c0 .653-.713.998-1.233.696L1 8.752V12a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm7 1.133L1.696 8 7.5 11.367V4.633zm7.5 0L9.196 8 15 11.367V4.633z"/>
+        </svg>
+        Back
+      </button>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Link</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form #linkForm="ngForm" (ngSubmit)="onSubmit(linkForm.value)">
+        <div class="modal-body">
+            <div class="mb-3">
+              <label for="link-name" class="col-form-label">Link Name:</label>
+              <input
+                    type="text"
+                    class="form-control"
+                    id="link-name"
+                    name="name"
+                    #nameRef="ngModel"
+                    [ngClass]="{'has-success':nameRef.valid && (nameRef.pristine || nameRef.untouched),
+                                  'has-danger':nameRef.invalid && (nameRef.dirty || nameRef.touched)}"
+                    required
+                    minlength="3"
+                    maxlength="200"
+                    ngModel>
+            </div>
+            <div *ngIf="nameRef.errors && (nameRef.dirty || nameRef.touched)">
+              <p class="error-msg"
+                [hidden]="!nameRef.errors.required">Title is required</p>
+              <p class="error-msg"
+                [hidden]="!nameRef.errors.minlength">Must be more then 3 charachters</p>
+              <p class="error-msg"
+                [hidden]="!nameRef.errors.maxlength">Must be minimum 200 charachters</p>
+            </div>
+            <div class="mb-3">
+              <label for="link-url" class="col-form-label">Link Url:</label>
+              <input
+                    type="text"
+                    class="form-control"
+                    id="link-url"
+                    name="link"
+                    #linkRef="ngModel"
+                    [ngClass]="{'has-success':linkRef.valid && (linkRef.pristine || linkRef.untouched),
+                                  'has-danger':linkRef.invalid && (linkRef.dirty || linkRef.touched)}"
+                    required
+                    minlength="10"
+                    maxlength="2100"
+                    pattern="[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+                    ngModel>
+            </div>
+            <div *ngIf="linkRef.errors && (linkRef.dirty || linkRef.touched)">
+              <p class="error-msg"
+                [hidden]="!linkRef.errors!.required">Title is required</p>
+              <p class="error-msg"
+                [hidden]="!linkRef.errors.minlength">Must be more then 10 charachters</p>
+              <p class="error-msg"
+                [hidden]="!linkRef.errors.maxlength">Must be minimum 2100 charachters</p>
+              <p class="error-msg"
+                [hidden]="!linkRef.errors.pattern">Invalid Url</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" [disabled]="!linkForm.valid" data-bs-dismiss="modal">Add</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</section>
+

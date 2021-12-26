@@ -1,0 +1,135 @@
+
+.add-book{
+  box-shadow: 1px 1px 20px 2px rgb(6, 22, 94);
+  background-color: rgb(167, 166, 166);
+}
+.genre-check{
+  margin-bottom: 7px;
+}
+[type="text"],[type="number"], textarea{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+
+}
+label{
+  font-family:'Roboto Mono';
+  color: #0d254d;
+}
+select{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 800;
+  color: #022a66;
+}
+option{
+  background-color: rgb(202, 198, 198);
+  font-family:'Roboto Mono';
+}
+option:nth-child(even){
+  background-color: rgba(4, 1, 27,0.4);
+  color: rgb(255, 255, 255);
+}
+.btn{
+  margin: 10px 10px;
+  width: 150px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 2.8px;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+.btn:hover{
+  text-shadow: 1px -1px 1px rgb(3, 125, 156);
+  color: rgb(54, 35, 163);
+}
+.hp-links-subtitle{
+  font-size: 1.2rem;
+  letter-spacing: 1.8px;
+  margin-top: 5px;
+}
+.hyperlinks{
+  background: linear-gradient(90deg, rgba(69,117,169,1) 0%, rgba(4,16,72,1) 50%, rgba(6,56,112,1) 100%);
+  border: 3px solid ;
+  border-image-slice:3%;
+  border-image-source: radial-gradient(circle, rgb(192, 234, 255) 9%, rgba(4, 5, 63, 0.9) 80%);
+  border-image-repeat:round;
+  border-image-width: 2px;
+  color: #949fb0;
+  text-shadow: 1px 1px rgb(18, 2, 107);
+  font-weight:bolder;
+  font-style: italic;
+  font-family:'Roboto Mono';
+  border-radius: 3px;
+}
+
+.hp-link-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  padding: 2px 5px;
+}
+.add-delete-btn-block{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.label-link{
+  text-align: center;
+}
+svg.bi.bi-plus-circle {
+  height: 26px !important;
+  width: 26px !important;
+}
+svg.bi.bi-x-octagon {
+  height: 26px !important;
+  width: 26px !important;
+}
+.btn-book-submit{
+  margin-bottom: 50px;
+}
+.valid{
+  background-color: rgba(32, 17, 163, 0);
+  height: 39px;
+}
+@media screen and (max-width: 768px) {
+  label{
+    font-size: 0.8rem;
+  }
+  .genre-check{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 8px;
+  }
+  .input-link{
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .hp-link-btn{
+    width: 27px;
+    height: 28px;
+    border-radius: 90px;
+    padding: 1px 0;
+  }
+  svg.bi.bi-plus-circle {
+    height: 19px !important;
+    width: 19px !important;
+    margin-top: -8px;
+  }
+  svg.bi.bi-x-octagon {
+    height: 19px !important;
+    width: 19px !important;
+    margin-top: -8px;
+  }
+  .add-delete-btn-block{
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-book-submit{
+    width: 75vw;
+  }
+  .error-msg{
+    font-size: 0.6rem;
+  }
+}

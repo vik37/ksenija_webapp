@@ -1,0 +1,409 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Services\\BookWriter.Services.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DataAccess\\BookWriter.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DataAccess\\BookWriter.DataAccess.csproj",
+        "projectName": "BookWriter.DataAccess",
+        "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DataAccess\\BookWriter.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Domain\\BookWriter.Domain.csproj": {
+                "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Domain\\BookWriter.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Domain\\BookWriter.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Domain\\BookWriter.Domain.csproj",
+        "projectName": "BookWriter.Domain",
+        "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Domain\\BookWriter.Domain.csproj",
+        "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DtoModels\\BookWriter.DtoModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DtoModels\\BookWriter.DtoModels.csproj",
+        "projectName": "BookWriter.DtoModels",
+        "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DtoModels\\BookWriter.DtoModels.csproj",
+        "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DtoModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Services\\BookWriter.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Services\\BookWriter.Services.csproj",
+        "projectName": "BookWriter.Services",
+        "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Services\\BookWriter.Services.csproj",
+        "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DataAccess\\BookWriter.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DataAccess\\BookWriter.DataAccess.csproj"
+              },
+              "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DtoModels\\BookWriter.DtoModels.csproj": {
+                "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DtoModels\\BookWriter.DtoModels.csproj"
+              },
+              "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\EmailService\\EmailService.csproj": {
+                "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\EmailService\\EmailService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\EmailService\\EmailService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\EmailService\\EmailService.csproj",
+        "projectName": "EmailService",
+        "projectPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\EmailService\\EmailService.csproj",
+        "packagesPath": "C:\\Users\\vikto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\EmailService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vikto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

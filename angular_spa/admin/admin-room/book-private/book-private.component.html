@@ -1,0 +1,24 @@
+<section class="navigation-add-update-delete">
+  <button (click)="changeToAdd()" class="btn-add" type="button">add</button>
+  <button (click)="changeToUpdate()" class="btn-change" type="button">change</button>
+</section>
+<main>
+  <br />
+  <br />
+  <h3>{{titlePage}}</h3>
+  <br />
+  <hr />
+  <br />
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+  <br />
+  <hr />
+  <br />
+  <app-change-book  *ngIf="!addOrUpdate"></app-change-book>
+  <app-add-book (newBookEvent)="addBook($event)" (formEvent)="getFormData($event)"
+                *ngIf="addOrUpdate">
+  </app-add-book>
+</main>

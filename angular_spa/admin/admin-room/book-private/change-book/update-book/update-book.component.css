@@ -1,0 +1,157 @@
+.change-book{
+  display: block;
+  margin-bottom: 50px;
+  box-shadow: 1px 1px 20px 2px rgb(6, 22, 94);
+  background-color: rgb(177, 174, 174);
+}
+.change-book-none{
+  display: none;
+}
+
+.genre-check{
+  margin-bottom: 7px;
+}
+[type="text"],[type="number"], textarea{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+
+}
+label{
+  font-family:'Roboto Mono';
+  color: #0d254d;
+}
+select{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 800;
+  color: #022a66;
+}
+option{
+  background-color: rgb(202, 198, 198);
+  font-family:'Roboto Mono';
+}
+option:nth-child(even){
+  background-color: rgba(4, 1, 27,0.4);
+  color: rgb(255, 255, 255);
+}
+.btn-book-submit{
+  margin: 10px 10px;
+  width: 150px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  letter-spacing: 2.8px;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+.btn-book-submit:hover{
+  text-shadow: 1px -1px 1px rgb(3, 125, 156);
+  color: rgb(54, 35, 163);
+}
+.btn-update-back{
+  background-color: rgba(10, 4, 97, 0.4);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  font-family:'Roboto Mono';
+  color: rgb(255, 255, 255);
+  outline: 1px solid rgb(104, 103, 103);
+  outline-offset: 3px;
+  margin-bottom: 20px;
+}
+.btn-update-back:hover{
+  filter: saturate(8);
+}
+.btn-update-back:active{
+  box-shadow: 0 0 9px 5px rgba(10, 4, 97, 0.4);
+  outline: 5px inset rgba(10, 4, 97, 0.1);
+}
+.change-photo-block{
+  padding: 10px;
+  border-left: 1px solid rgb(109, 109, 109);
+  border-right: 1px solid rgb(121, 120, 120);
+  border-bottom: 0.6px solid rgb(128, 126, 126);
+  border-radius: 10px;
+}
+.book-update-img{
+  width: 130px;
+  height: 180px;
+}
+.change-photo > input{
+  margin-top: 40px;
+}
+.change-photo >label{
+  background-color:  rgba(9, 5, 61, 0.9);
+  outline: 0.6px solid rgba(9, 5, 61, 0.3);
+  width: 400px;
+  outline-offset: 4px;
+  color: rgba(9, 5, 61,0.9);
+  letter-spacing: 0.9px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-shadow: 2px -1px  rgb(255, 255, 255);
+  border-radius: 6px;
+  padding: 5px;
+  border: 3px dotted rgb(66, 1, 1);
+}
+.btn-save-img{
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+}
+.valid{
+  background-color: rgba(32, 17, 163, 0);
+  height: 39px;
+}
+@media screen and (max-width: 1183px){
+  .change-photo >label{
+    width: 200px;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  label{
+    font-size: 1rem;
+  }
+  .genre-check{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 8px;
+  }
+  .input-link{
+    margin-bottom: 10px;
+  }
+  .change-photo >label{
+    background-color: rgba(9, 5, 61, 0);
+    border: none;
+    outline: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .btn-book-submit{
+    width: 75vw;
+  }
+  .error-msg{
+    font-size: 0.6rem;
+  }
+  .change-photo > input{
+    margin-top: 10px;
+  }
+  .btn-update-back{
+    margin-top: 20px;
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 236px){
+  .book-update-img{
+    display: none;
+  }
+  .btn-book-submit{
+    width: 50px;
+    font-size: 0.6rem;
+  }
+  .change-photo >label{
+    width: 100px;
+    font-size: 0.9rem;
+  }
+}

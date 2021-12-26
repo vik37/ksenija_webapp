@@ -1,0 +1,37 @@
+<div *ngIf="loading">
+  <div class="lds-spinner"><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+<hr />
+<br />
+<section class="container">
+  <div class="article-heading">
+    <h2>&#9829; Press and Reviews &#9829;</h2>
+  </div>
+  <article class="article" *ngFor="let article of articles">
+      <h3>{{article.title}}</h3>
+      <div class="article-block">
+        <div class="article-image-block">
+          <a *ngIf="article.photoName !== null" target="_blank" [href]="article.link">
+            <img (load)="onLoad()" class="article-image" [src]="articlePhotoUrl+article.photoName"
+              [alt]="article.photoName" />
+          </a>
+          <a *ngIf="article.photoName === null" target="_blank" [href]="article.link">
+            <img (load)="onLoad()" class="article-image" [src]="articlePhotoUrl+'unnamed.png'"
+              [alt]="article.photoName" />
+          </a>
+        </div>
+        <div class="article-text-block">
+          <p>{{article.description}}</p>
+        </div>
+      </div>
+      <h6>&copy; Click on photo and see the detail</h6>
+    </article>
+</section>
+<br />
+<hr />
+<br />
+<footer>
+  <app-footer></app-footer>
+</footer>
+

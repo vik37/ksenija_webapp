@@ -1,0 +1,96 @@
+
+<section class="add-main">
+  <section class="add-body">
+    <div class="photo">
+      <input id="photo"
+      class="article-photo-upload"
+      type="file"
+      accept=".jpg, .jpeg, .png"
+      name="photo"
+      (change)="onFileCange($event)">
+      <p *ngIf="!extension" class="error-msg">{{extensionErr}}</p>
+    </div>
+    <form #articleForm="ngForm" (ngSubmit)="onArticleSubmit(articleForm.value)" class="press-form">
+      <div class="press-input-form press-input-form-title">
+        <label for="title">Title</label>
+        <input
+              type="text"
+              name="title"
+              id="title"
+              #titleRef="ngModel"
+              minlength="2"
+              maxlength="200"
+              required
+              ngModel />
+        <div *ngIf="titleRef.errors && (titleRef.dirty || titleRef.touched)">
+          <p class="error-msg"
+            [hidden]="!titleRef.errors.required">title is required</p>
+          <p class="error-msg"
+            [hidden]="!titleRef.errors.minlength">title can not contain less than 2 characters</p>
+          <p class="error-msg"
+            [hidden]="!titleRef.errors.maxlength">title can not contain less than 200 characters</p>
+        </div>
+      </div>
+      <div class="press-input-form press-input-form-description">
+        <label for="description">Description</label>
+        <textarea
+              id="description"
+              name="description"
+              #descriptionRef="ngModel"
+              minlength="5"
+              maxlength="100000"
+              required
+              ngModel>
+        </textarea>
+        <div *ngIf="descriptionRef.errors && (descriptionRef.dirty || descriptionRef.touched)">
+          <p class="error-msg"
+              [hidden]="!descriptionRef.errors.required">description is required</p>
+          <p class="error-msg"
+              [hidden]="!descriptionRef.errors.minlength">description can not contain less than 5 characters</p>
+          <p class="error-msg"
+              [hidden]="!descriptionRef.errors.maxlength">description can not contain more than 100000 characters</p>
+          </div>
+      </div>
+      <div class="press-input-form press-input-form-link">
+        <label for="link">Link</label>
+        <input
+              type="text"
+              name="link"
+              id="link"
+              #linkRef="ngModel"
+              required
+              minlength="10"
+              maxlength="2100"
+              pattern="[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+              ngModel />
+        <div *ngIf="linkRef.errors && (linkRef.dirty || linkRef.touched)">
+          <p class="error-msg"
+            [hidden]="!linkRef.errors.required">url is required</p>
+          <p class="error-msg"
+            [hidden]="!linkRef.errors.minlength">url can not be less than 10 characters</p>
+          <p class="error-msg"
+            [hidden]="!linkRef.errors.maxlength">url can not be more than 2100 characters</p>
+            <p class="error-msg"
+            [hidden]="!linkRef.errors.pattern">invalid url</p>
+        </div>
+      </div>
+      <button class="add-btn" [disabled]="!articleForm.valid || !extension"  type="submit">Add</button>
+    </form>
+  </section>
+  <section class="show-add-body">
+    <div class="show-add">
+      <p>{{postedArticle?.title}}</p>
+    </div>
+    <div class="show-add">
+      <p>{{postedArticle?.description}}</p>
+    </div>
+    <div class="show-add">
+      <p>{{postedArticle?.link}}</p>
+    </div>
+    <div class="show-add">
+      <img [src]="photoUrl+postedArticle?.photoName" *ngIf="photoEmpty"
+            class="add-article-img" [alt]="photoName" />
+    </div>
+  </section>
+</section>
+

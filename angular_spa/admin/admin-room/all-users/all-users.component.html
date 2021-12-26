@@ -1,0 +1,35 @@
+<section >
+  <div class="users-hading-block">
+    <h2>All Users</h2>
+  </div>
+  <div class="all-users-block">
+    <div class="all-users-body" *ngFor="let user of users">
+      <div class="user-main-block" *ngIf="user.firstname !== 'Ksenija' && user.lastname !== 'Nikolova'">
+        <div class="user-block">
+          <h4>Firstname:</h4>
+        </div>
+        <div class="user-block">
+          <p>{{user.firstname}}</p>
+        </div>
+        <div class="user-block">
+          <h4>Lastname:</h4>
+        </div>
+        <div class="user-block">
+          <p>{{user.lastname}}</p>
+        </div>
+        <div class="user-block">
+          <h4>Username:</h4>
+        </div>
+        <div class="user-block">
+          <p>{{user.username}}</p>
+        </div>
+        <div class="user-block">
+          <button type="button" (click)="removeUser(user.username)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="all-users-footer">
+    <h5>the total number of registered users on this site is: <b>{{users.length - 1}} </b></h5>
+  </div>
+</section>

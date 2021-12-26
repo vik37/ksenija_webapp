@@ -1,0 +1,75 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "BookWriter.DtoModels/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "3.1.18"
+        },
+        "runtime": {
+          "BookWriter.DtoModels.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/3.1.18": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.1.18",
+          "System.IO.Pipelines": "4.7.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.dll": {
+            "assemblyVersion": "3.1.18.0",
+            "fileVersion": "3.100.1821.36504"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/3.1.18": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "3.1.18.0",
+            "fileVersion": "3.100.1821.36403"
+          }
+        }
+      },
+      "System.IO.Pipelines/4.7.4": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "4.0.2.3",
+            "fileVersion": "4.700.20.56604"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BookWriter.DtoModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Http.Features/3.1.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QsQfPIHnCCeAF0C3m8mPDUc6E+7eQP8HK1QjaDwGGm+hPHbTBWMOZJlKnzTZpHl/AvrYLKbrcAExMVkBEsao1A==",
+      "path": "microsoft.aspnetcore.http.features/3.1.18",
+      "hashPath": "microsoft.aspnetcore.http.features.3.1.18.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/3.1.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QFvxAK1seL0TeCeZcsld3X8/xPqH4xuMwqzbEkgQK8ChFwM9c8tUHK6JZG7H47UgjaucwV2y8G9IWlX051oOkw==",
+      "path": "microsoft.extensions.primitives/3.1.18",
+      "hashPath": "microsoft.extensions.primitives.3.1.18.nupkg.sha512"
+    },
+    "System.IO.Pipelines/4.7.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TQqNjDcTVu6eTDB2S0vjSUhn0udEugL93D9zgsOsSiJO1kv1UWDM2o0+79H95I5X+S0VPEzm4ihj6KPwhNEb7g==",
+      "path": "system.io.pipelines/4.7.4",
+      "hashPath": "system.io.pipelines.4.7.4.nupkg.sha512"
+    }
+  }
+}

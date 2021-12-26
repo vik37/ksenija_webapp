@@ -1,0 +1,42 @@
+<div *ngIf="loading">
+  <div class="lds-spinner"><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+<main [hidden]="loading" class="container-fluid biography">
+  <div class="row">
+    <section class="col-md-3 left-block-img">
+        <img class="left-img" src="assets/img/ksenija/image00020.jpeg"
+              alt="ksenija left image" (load)="onLoad()" />
+    </section>
+    <article class="col-md-6 article-biography">
+      <div class="middle-main-text">
+        <div class="biography-block-title">
+          <div class="biography-title-img"></div>
+          <h2 [translate]="'biography.title'">BIOGRAPHY</h2>
+        </div>
+        <img class="biography-phoneSize-img" src="assets/img/ksenija/image1002.jpg"
+            alt="ksenija image mobile size" (load)="onLoad()" />
+        <p [innerHTML]="'biography.description'|translate">
+
+        </p>
+        <hr />
+      </div>
+    </article>
+    <section class="col-md-3 right-block-img">
+        <img class="right-img" src="assets/img/ksenija/image1001.jpg"
+              alt="ksenija right image" (load)="onLoad()" />
+    </section>
+  </div>
+  <br />
+  <hr />
+  <br >
+  <div class="row">
+    <section class="col-xs-1 col-sm-2 col-md-2 books-images" *ngFor="let book of books">
+        <img class="book-img" src="assets/img/books/book_{{book}}.jpg"
+              alt="book_{{book}}" (load)="onLoad()"/>
+    </section>
+  </div>
+</main>
+<footer [hidden]="loading">
+  <app-footer></app-footer>
+</footer>

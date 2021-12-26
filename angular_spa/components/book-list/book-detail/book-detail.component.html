@@ -1,0 +1,125 @@
+<div *ngIf="loading">
+  <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+<section class="container">
+  <br />
+  <br />
+  <h2 class="card-title">{{book?.name}}</h2>
+  <br />
+  <hr class="book-detail-line" />
+  <br />
+  <div [hidden]="loading" class="row">
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-12">
+            <img (load)="onLoad()" class="book-img" src="{{bookImgUrl}}"
+            [alt]="book?.name" />
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-10 description-block">
+              <p><b [translate]="'book.publishDate'"></b> {{book?.dateOfPublish}}</p>
+              <p><b [translate]="'book.publisher'"></b> {{book?.publisher}}</p>
+            </div>
+            <div class="col-md-4 description-block">
+              <p><b [translate]="'book.pages'"></b> {{book?.pages}}</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4 description-block">
+              <p><b [translate]="'book.country'"></b> {{book?.country | uppercase}}</p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-1 div-helper-image-description-block"></div>
+      <div class="col-md-7">
+        <p class="description-title" [translate]="'book.description'"></p>
+        <p class="description-text" [innerHTML]="book?.description"></p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-xs-1 col-md-3">
+        <ul class="genre">
+          <p [translate]="'book.genre'"></p>
+          <li>{{book?.genre1 |enumToString | charakterReplace}}</li>
+          <li *ngIf="book?.genre2 !== 0">{{book?.genre2 | enumToString}}</li>
+          <li *ngIf="book?.genre3 !== 0">{{book?.genre3 | enumToString}}</li>
+          <li *ngIf="book?.genre4 !== 0">{{book?.genre4 | enumToString}}</li>
+        </ul>
+      </div>
+      <br />
+      <br />
+    </div>
+    <hr class="book-detail-line" />
+    <div class=" col-xs-1 col-md-5"></div>
+    <div class="col-md-2">
+      <button class="bitn-links" (click)="loadHpComponent()">
+        {{btnMsgTranslate|translate}}<i class="fa fa-arrow-{{arrow}}"></i>
+      </button>
+    </div>
+    <br />
+    <div>
+      <app-hp-links *ngIf="loadLinks"  [links]="links"></app-hp-links>
+    </div>
+</section>
+<br />
+<hr />
+<br />
+<section *ngIf="isAuthenticated" class="comments container">
+  <div class="row" *ngFor="let comment of comments">
+    <div class="col-xs-12 col-sm-12 col-md-3"></div>
+    <div class="col-sm-12 col-md-6 " >
+      <div *ngIf="comment.bookComment !== '' && comment.bookComment !== null" class="comment-view-block">
+        <h4>{{comment.user.username}}</h4>
+        <p>{{comment.bookComment}}</p>
+        <div class="row">
+          <div class="col-md-10 "></div>
+          <div *ngIf="isAdmin" class="col-md-1 remove-book-comment">
+            <button class="btn btn-danger" name="delete" (click)="removeComment(comment.user.username,comment.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-3"></div>
+      <form #bCommentForm="ngForm" (ngSubmit)="addComment(bCommentForm.value,bCommentForm)" class="col-xs-12 col-sm-12 col-md-6 comment-box">
+        <div class="col-sm-12 col-md-12 comment-box-heading">
+          <h5 [translate]="'book.comment'|translate"></h5>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 comment-text-box">
+          <textarea
+            name="bookComment"
+            minlength="3"
+            maxlength="10000"
+            required
+            ngModel
+          ></textarea>
+        </div>
+        <div class="col-md-12">
+          <button [disabled]="!bCommentForm.valid" class="btn btn-outline-dark btn-comment">
+            {{'book.addButton'|translate}}
+          </button>
+        </div>
+      </form>
+    <div class="col-sm-12 col-md-3">
+      <div class="col-sm-2 col-md-3 like-box"  [title]="likePopup">
+        <i class="fa fa-thumbs-up"  [ngClass]="!like?'likes':'unlike'"
+            (click)="clickLike()"  aria-hidden="true"></i>
+      </div>
+      <div class="col-sm-2 col-md-1 like-number">
+        <p>{{numberOfLikes}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <app-footer></app-footer>
+</footer>

@@ -1,0 +1,173 @@
+.add-main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100%;
+  filter:brightness(90%);
+}
+.add-body{
+  background: radial-gradient(circle, rgba(59,73,94,1) 0%, rgba(13,37,77,1) 23%);
+  box-shadow: -1px 1px 30px 1px rgba(2, 4, 15, 0.9) inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  width: 45vw;
+  border: 2px solid rgb(0, 0, 0);
+  font-family:fantasy;
+}
+.error-msg, .valid-msg{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  box-shadow: -2px -2px 20px 3px rgb(0, 0, 0) inset;
+}
+label{
+  background-color: rgba(136, 133, 133,0.4);
+  padding: 1.4px 10px 2.5px;
+  border: 1.4px solid rgb(240, 236, 236);
+  color: rgb(240, 236, 236);
+  letter-spacing: 1.7px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 7px;
+  font-family:'Roboto Mono';
+}
+input{
+  border: 2px solid rgb(255, 255, 255);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+[type="file"]{
+  border: none;
+  background: none;
+  color: #fff;
+}
+.article-photo-upload::-webkit-file-upload-button{
+  visibility: hidden;
+}
+.article-photo-upload::before{
+  content: 'Select file';
+  display: inline-block;
+  background: linear-gradient(to top, #7c7878, #e3e3e3);
+  border: 1.5px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: 1.8px;
+  color: rgb(0, 0, 0);
+}
+.article-photo-upload:hover:before{
+  border-color: rgb(255, 255, 255);
+}
+.article-photo-upload:active::before{
+  background: -webkit-linear-gradient(top, #52c99b, #084550);
+  color: rgb(2, 9, 109);
+  filter: contrast(80%);
+}
+.press-form{
+  display: flex;
+  flex-direction: column;
+  padding:  20px 0;
+}
+.press-input-form{
+  padding-bottom: 30px;
+}
+.press-input-form-description{
+  display: flex;
+  flex-direction: column;
+
+}
+textarea{
+  font-size: 1.2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px double rgba(0, 0, 0,1);
+  border-radius: 10px;
+  outline: none;
+}
+.press-input-form-description > label{
+  background-color: rgba(0, 0, 0,0);
+  border: none;
+}
+.add-btn{
+  height: 28px;
+  width: 80px;
+  align-self: center;
+  border: none;
+  box-shadow: -8px 5px 20px 3px rgba(136, 133, 133,0.7) inset;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #084550;
+  text-shadow: 1px 1px #ffffff;
+}
+.add-btn:disabled{
+  cursor: not-allowed;
+  color: rgb(128, 128, 128);
+  box-shadow: -8px 5px 20px 3px rgba(0, 0, 0, 0.7) inset;
+}
+
+.show-add-body{
+  background: radial-gradient(circle, rgba(59,73,94,1) 0%, rgba(13,37,77,1) 23%);
+  box-shadow: -1px 1px 30px 1px rgba(0, 10, 24, 0.9) inset;
+  width: 45vw;
+  border: 3px solid rgb(4, 2, 7);
+  outline: 0.5px solid rgba(255, 255, 255,0.2);
+  outline-offset: -30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  color: #e3e3e3;
+  font-weight: 800;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  letter-spacing: 1.8px;
+}
+.show-add{
+  background-color: rgba(0, 0, 0,0.1);
+  width: 37vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+}
+.show-add > p{
+  font-family:'Roboto Mono';
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 1);
+}
+.add-article-img{
+  width: 120px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 743px){
+  .show-add-body{
+    display: none;
+  }
+  .add-body{
+    width: 85vw;
+  }
+}
+@media screen and (max-width: 384px){
+  .add-body{
+    display: flex;
+    align-items: center;
+  }
+  input, textarea{
+    width:80vw;
+  }
+  textarea{
+    height: 20vh;
+  }
+}

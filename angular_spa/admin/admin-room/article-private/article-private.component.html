@@ -1,0 +1,33 @@
+<section>
+  <button (click)="changeToAdd()" class="btn-add" type="button">add</button>
+  <button (click)="changeToDelete()" class="btn-delete" type="button">delete</button>
+</section>
+<main>
+  <br />
+  <br />
+  <h3>{{titlePage}}</h3>
+  <br />
+  <hr />
+  <br />
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+  <br />
+  <hr />
+  <br />
+  <app-delete-article
+    (getRemovedIdEvent)="removeArticle($event)"
+    [previousArticles]="articles"
+    *ngIf="addOrChange">
+  </app-delete-article>
+  <app-add-article
+    (formEvent)="getFormData($event)"
+    (postArticleEvent)="addArticle($event)"
+    [postedArticle]="postedArticle"
+    [photoUrl]="photoUrl"
+    *ngIf="!addOrChange">
+  </app-add-article>
+</main>
+

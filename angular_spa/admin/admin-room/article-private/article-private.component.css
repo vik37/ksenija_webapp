@@ -1,0 +1,103 @@
+section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-left: 50px solid rgb(4, 15, 114);
+  border-right: 50px solid rgb(4, 15, 114);
+  background-color: rgb(75, 74, 74,0.2);
+  border-bottom: 5px solid rgba(4, 15, 114,0.6);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+section > button{
+  width: 10vw;
+  color: rgb(128, 173, 163);
+  filter: grayscale(60%);
+  border: 2px solid rgba(196, 88, 88, 0.9);
+  cursor: pointer;
+  font-family:cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.8px;
+  text-shadow: 1px 1px 1px rgb(114, 4, 4);
+  border-radius: 9px;
+  outline: 1.4px groove rgb(255, 255, 255);
+  outline-offset: 10px;
+}
+section > button:active{
+  box-shadow: 3px 3px 30px 1px rgba(196, 88, 88, 0.5) inset;
+  border-width: 4px;
+  font-size: 0.7rem;
+}
+.btn-add, .btn-delete{
+  background-size: 50px;
+  background-repeat: repeat-x;
+}
+.btn-add{
+  background-image: radial-gradient(circle, rgba(47,153,175,1) 4%, rgba(0,8,146,1) 60%);
+
+}
+.btn-delete{
+  background-image: radial-gradient(circle, rgba(47,153,175,1) 4%, rgb(146, 0, 0) 60%);
+}
+h3{
+  font-size: 2.3rem;
+  text-shadow: 1px 1px 2px rgb(255, 255, 255);
+  text-align: center;
+  background-color: rgba(2, 14, 184, 0.2);
+  font-family:'Roboto Mono';
+}
+.circles{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  background-color: #122035;
+}
+.circle{
+  width: 200px;
+  height: 200px;
+  border: 10px outset rgb(18, 2, 85);
+  border-radius: 200px;
+  outline: 0.4px solid rgba(104, 104, 104, 0.4);
+  outline-offset: 10px;
+  box-shadow: 1px 1px 30px 20px rgba(2, 14, 184, 0.8) inset ;
+}
+.circle-1{
+  background-color: rgba(30, 6, 61,0.7);
+}
+.circle-2{
+  background-color: rgba(104, 104, 104, 0.6);
+}
+.circle-3{
+  background-color: rgba(255, 255, 255,0.5);
+}
+@media screen and (max-width: 654px){
+  section{
+    padding: 5px;
+  }
+  section > button{
+    outline: none;
+    width: 20vw;
+  }
+  .circle{
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 326px){
+  section{
+    flex-direction: column;
+    background-color: rgb(0, 7, 107);
+  }
+  section > button{
+    outline: none;
+    width: 40vw;
+    font-size: 0.6rem;
+    margin-bottom: 20px;
+  }
+  .circle{
+    width: 40px;
+    height: 40px;
+    border: 2px outset rgb(18, 2, 85);
+  }
+}

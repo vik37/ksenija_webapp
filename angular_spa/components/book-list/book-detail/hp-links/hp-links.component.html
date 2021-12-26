@@ -1,0 +1,15 @@
+<br />
+<hr @fade />
+  <div @fade class="link">
+    <h3 @fade class="link-heading" [translate]="'book.WhereToBuy'"></h3>
+    <br />
+    <div class="link-block">
+      <div  *ngFor="let link of links">
+        <h5 class="link-name" [ngClass]="language==='eng'?'link-name-eng':'link-name-mkd'">|
+            {{" "+link.name}}</h5>
+        <p  class="link-text">{{'book.hpLinks.link'|translate}}: <a [href]="link.link" target="_blank">
+            {{link.name}}</a></p>
+      </div>
+    </div>
+  </div>
+

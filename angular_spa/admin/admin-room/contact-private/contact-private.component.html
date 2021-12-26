@@ -1,0 +1,54 @@
+<br />
+<hr />
+<br />
+<section class="container contact">
+  <div class="row">
+    <div class="col-12 contact-block-heading">
+      <br />
+      <h1>Contact Messages</h1>
+      <p>Total Number of Messages: {{totalNumberOfContacts}}</p>
+      <br />
+      <hr />
+      <br />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" *ngFor="let contact of contacts;let i = index">
+      <div class="col-md-12 contact-block-number">
+        <h3>{{i+1}}</h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 contact-block-name">
+          <h5>Name:</h5>
+          <p>{{contact.name}}</p>
+        </div>
+        <div  class="col-xs-12 col-sm-6 col-md-6 contact-block-email">
+          <h5>E-mail:</h5>
+          <a [href]="'mailto: '+ contact.email" >{{contact.email}}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 contact-block-msg-title">
+          <h5>Message: </h5>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8 contact-block-msg">
+          <p>{{contact.message}}</p>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-md-5"></div>
+        <div class="col-sm-6 col-md-6 contact-block-btn-remove">
+          <button class="btn btn-danger contact-btn-remove" (click)="removeContact(contact.id)"  name="delete">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+              <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

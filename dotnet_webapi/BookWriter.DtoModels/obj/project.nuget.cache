@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "95fFoizFKbZcDOLvQPzCXBAV137gi2aG0m/9918khaMTZ6taYulasJpaxJcbND9cgRcW7eIkHUqMBbHssY+YUQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vikto\\source\\repos\\Bussiness_projects\\BookWriter_Asp.Net_WebApi\\BookWriter.DtoModels\\BookWriter.DtoModels.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vikto\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.18\\microsoft.aspnetcore.http.features.3.1.18.nupkg.sha512",
+    "C:\\Users\\vikto\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.18\\microsoft.extensions.primitives.3.1.18.nupkg.sha512",
+    "C:\\Users\\vikto\\.nuget\\packages\\system.io.pipelines\\4.7.4\\system.io.pipelines.4.7.4.nupkg.sha512"
+  ],
+  "logs": []
+}

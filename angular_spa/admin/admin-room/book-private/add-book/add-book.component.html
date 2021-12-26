@@ -1,0 +1,343 @@
+
+<div class="container add-book">
+  <br />
+  <form class="add-book-form" [formGroup]="formBook" (ngSubmit)="onSubmit(formBook.value)">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-md-4 inputs">
+        <label for="market">Market</label>
+        <select class="form-select form-select-sm"
+                id="market"
+                aria-label=".form-select-sm example"
+                formControlName="market">
+                <option value="undefined" selected disabled>Select option</option>
+                <option *ngFor="let market of viewMarket | tranformEnum" [ngValue]="market.index" >
+            {{market.name}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <hr />
+    <br />
+    <div class="row">
+        <div class="col-sm12 col-md-4 inputs">
+            <label for="name">Book Name</label>
+            <input
+                  id="name"
+                  type="text"
+                  class="form-control"
+                  required
+                  formControlName="name"
+                  [ngClass]="{required:nameValid}"/>
+            <div class="valid" *ngIf="!nameValid"></div>
+            <p *ngIf="formBook.hasError('required', 'name') &&
+                  (formBook.get('name')?.touched || formBook.get('name')?.dirty)"
+                  class="error-msg">Name is required</p>
+            <p *ngIf="(formBook.hasError('minlength', 'name') ||
+                   (formBook.hasError('maxlength', 'name'))) &&
+                   (formBook.get('name')?.touched || formBook.get('name')?.dirty)"
+                    class="error-msg">Name should be between 3 and 100 chararchters.</p>
+        </div>
+        <div class="col-sm-12 col-md-4 inputs">
+          <label for="date">Publication Date</label>
+          <input
+                type="number"
+                class="form-control"
+                id="date"
+                required
+                formControlName="dateOfPublish"
+                [ngClass]="{required:dateOfPublishValid}"/>
+          <div class="valid" *ngIf="!dateOfPublishValid"></div>
+          <p *ngIf="formBook.hasError('required', 'dateOfPublish') &&
+                (formBook.get('dateOfPublish')?.touched || formBook.get('dateOfPublish')?.dirty)"
+                  class="error-msg">Publication date is required</p>
+          <p *ngIf="(formBook.hasError('min','dateOfPublish')) &&
+                (formBook.get('dateOfPublish')?.touched || formBook.get('dateOfPublish')?.dirty)"
+                  class="error-msg">The publication date can not be below 1999</p>
+          <p *ngIf="(formBook.hasError('max','dateOfPublish')) &&
+                (formBook.get('dateOfPublish')?.touched || formBook.get('dateOfPublish')?.dirty)"
+                  class="error-msg">The publication date can not be above 2050</p>
+        </div>
+        <div class="col-sm-12 col-md-4 inputs">
+          <label for="publisher">Publisher</label>
+          <input
+                type="text"
+                class="form-control"
+                id="publisher"
+                required
+                formControlName="publisher"
+                [ngClass]="{required:publisherValid}"/>
+          <div class="valid" *ngIf="!publisherValid"></div>
+          <p *ngIf="formBook.hasError('required', 'publisher') &&
+                (formBook.get('publisher')?.touched || formBook.get('publisher')?.dirty)"
+                  class="error-msg">Publisher is required</p>
+          <p *ngIf="(formBook.hasError('maxlength', 'publisher')) &&
+                (formBook.get('publisher')?.touched || formBook.get('publisher')?.dirty)"
+                  class="error-msg">Publisher should be less then 50 charachters</p>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-12"></div>
+      <div class="col-md-2"></div>
+      <div class="co-sm-12 col-md-7 inputs">
+        <label for="description">Description</label>
+        <textarea
+                  rows="7"
+                  class="book-add-description"
+                  id="description"
+                  class="form-control"
+                  required
+                  formControlName="description"
+                  [ngClass]="{required:descriptionValid}">
+        </textarea>
+        <div class="valid" *ngIf="!descriptionValid"></div>
+        <p *ngIf="formBook.hasError('required', 'description') &&
+                  (formBook.get('description')?.touched || formBook.get('description')?.dirty)"
+                    class="error-msg">Description name is required</p>
+        <p *ngIf="(formBook.hasError('minlength', 'description') ||
+                  (formBook.hasError('maxlength', 'description'))) &&
+                  (formBook.get('description')?.touched || formBook.get('description')?.dirty)"
+                    class="error-msg">Description should be between 10 and 500 charachters.</p>
+      </div>
+    </div>
+    <br />
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-12 col-md-3 genre-block">
+            <label for="genre1">Genre 1</label>
+            <select
+                    required
+                    class="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    (change)="changeGenre1($event)"
+                    formControlName="genre1"
+                    required
+                    [ngClass]="{required:genre1Valid}"
+            >
+              <option *ngFor="let genre of viewGenre | tranformEnum" [value]="genre.index" >
+                {{genre.name}}</option>
+            </select>
+            <div class="valid" *ngIf="!genre1Valid"></div>
+            <p *ngIf="formBook.hasError('required', 'genre1') ||
+            (formBook.hasError('min', 'genre1')) &&
+              (formBook.get('genre1')?.touched || formBook.get('genre1')?.dirty)"
+              class="error-msg">Genre 1 is required</p>
+          </div>
+          <div class="col-sm-12 col-md-3 genre-block">
+            <div class="col form-check genre-check">
+              <input class="form-check-input" formControlName="checkedGenre2"
+                (change)="checkedGenre2Enable()"
+                type="checkbox"  id="genre2">
+              <label class="form-check-label" for="genre2">
+                Genre 2
+              </label>
+            </div>
+            <select
+                    class="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    formControlName="genre2"
+                    (change)="changeGenre2($event)"
+                    >
+              <option *ngFor="let g of viewGenre |tranformEnum" [value]="g.index">{{g.name}}</option>
+            </select>
+          </div>
+          <div class="col-sm-12 col-md-3 genre-block">
+            <div class="col form-check genre-check">
+              <input class="form-check-input" (change)="checkedGenre3Enable()"
+                      type="checkbox" id="genre3">
+              <label class="form-check-label" for="genre3">
+                Genre 3
+              </label>
+            </div>
+            <select
+                    class="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    formControlName="genre3"
+                    (change)="changeGenre3($event)"
+                    >
+              <option *ngFor="let g of viewGenre |tranformEnum" [value]="g.index" >{{g.name}}</option>
+            </select>
+          </div>
+          <div class="col-sm-12 col-md-3 genre-block">
+            <div class="col form-check genre-check">
+              <input class="form-check-input" (change)="checkedGenre4Enable()"
+                    type="checkbox" id="genre4">
+              <label class="form-check-label" for="genre4">
+                Genre 4
+              </label>
+            </div>
+            <select
+                    required
+                    class="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    formControlName="genre4"
+                    (change)="changeGenre4($event)"
+                    >
+              <option *ngFor="let genre of viewGenre |tranformEnum" [value]="genre.index" >
+                {{genre.name}}
+              </option>
+            </select>
+          </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 inputs">
+          <label for="pages">Pages</label>
+          <input
+                  required
+                  type="number"
+                  class="form-control"
+                  id="pages"
+                  formControlName="pages"
+                  [ngClass]="{required:pagesValid}"/>
+          <div class="valid" *ngIf="!pagesValid"></div>
+          <p *ngIf="formBook.hasError('pages', 'pages') &&
+                  (formBook.get('pages')?.touched || formBook.get('pages')?.dirty)"
+                    class="error-msg">Pages is Required</p>
+          <p *ngIf="(formBook.hasError('min','pages')) &&
+                  (formBook.get('pages')?.touched || formBook.get('pages')?.dirty)"
+                    class="error-msg">The number of pages can not be less than 20</p>
+          <p *ngIf="(formBook.hasError('max','pages')) &&
+                  (formBook.get('pages')?.touched || formBook.get('pages')?.dirty)"
+                    class="error-msg">The number of pages can not exceed 10000</p>
+        </div>
+      <div class="col-xs-12 col-sm-6 inputs">
+        <label for="country">Country</label>
+        <input
+                type="text"
+                class="form-control"
+                id="country"
+                formControlName="country"
+                [ngClass]="{required:countryValid}"/>
+        <div class="valid" *ngIf="!countryValid"></div>
+        <p *ngIf="formBook.hasError('required', 'country') &&
+                (formBook.get('country')?.touched || formBook.get('country')?.dirty)"
+                  class="error-msg">Country is required</p>
+        <p *ngIf="(formBook.hasError('minlength', 'country') ||
+                (formBook.hasError('maxlength', 'country'))) &&
+                (formBook.get('country')?.touched || formBook.get('country')?.dirty)"
+                  class="error-msg">Country should be between 1 and 4 charachters</p>
+        <p *ngIf="(formBook.hasError('pattern','country')) &&
+                  (formBook.get('country')?.touched || formBook.get('country')?.dirty)"
+                    class="error-msg">Only letters</p>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-12"></div>
+      <div class="col-3"></div>
+      <div class="col-xs-12 col-md-6 mb-3">
+        <label for="upload-pfoto" class="form-label">Upload Photo</label>
+        <input
+                class="form-control form-control-sm"
+                accept=".jpg, .jpeg, .png"
+                id="upload-pfoto"
+                formControlName="photo"
+                type="file"
+                required
+                [ngClass]="{required:photoValid}"
+                (change)="onFileCange($event)">
+        <p *ngIf="formBook.hasError('required', 'photo') &&
+                (formBook.get('photo')?.touched ||formBook.get('photo')?.dirty)"
+                  class="error-msg">Photo is required</p>
+        <p *ngIf="!extension &&
+              (formBook.get('photo')?.touched ||formBook.get('photo')?.dirty)"
+              class="error-msg"
+        >
+          {{extensionErr}}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="hyperlinks col-md-8">
+        <form formArrayName="links">
+          <h3 class="hp-links-subtitle">Hyper Links</h3>
+          <div *ngFor="let hpLinkForm of links.controls; let i = index">
+            <hr *ngIf="i > 0" />
+            <div class="row p-2" [formGroupName]="i">
+              <div class="col-md-6">
+                <input  type="text"
+                        class="form-control input-link"
+                        id="recipient-name"
+                        formControlName="name"
+                        [ngClass]="{required: linksNameValid}"
+                        placeholder="add link name...">
+                <p *ngIf="links.controls[i].hasError('required', 'name') &&
+                        (links.controls[i].get('name')?.touched ||
+                            links.controls[i].get('name')?.dirty)"
+                        class="error-msg">Country is required</p>
+                <p *ngIf="(links.controls[i].hasError('minlength', 'name')) &&
+                        (links.controls[i].get('name')?.touched ||
+                          links.controls[i].get('name')?.dirty)"
+                          class="error-msg">
+                        Name should have minimum 3 charachters</p>
+                <p *ngIf="(links.controls[i].hasError('maxlength', 'name')) &&
+                        (links.controls[i].get('name')?.touched ||
+                          links.controls[i].get('name')?.dirty)"
+                        class="error-msg">Name should have maximum 200 charachters</p>
+              </div>
+              <div class="col-md-6">
+                  <input type="text"
+                          class="form-control"
+                          id="link"
+                          formControlName="link"
+                          placeholder="add link...">
+                  <p *ngIf="links.controls[i].hasError('required', 'link') &&
+                        (links.controls[i].get('link')?.touched ||
+                            links.controls[i].get('link')?.dirty)"
+                        class="error-msg">Link is required</p>
+                  <p *ngIf="(links.controls[i].hasError('minlength', 'link')) &&
+                            (links.controls[i].get('link')?.touched ||
+                              links.controls[i].get('link')?.dirty)"
+                        class="error-msg">
+                        Link must have minimum 10 charachters</p>
+                <p *ngIf="(links.controls[i].hasError('maxlength', 'link')) &&
+                        (links.controls[i].get('link')?.touched ||
+                            links.controls[i].get('link')?.dirty)"
+                        class="error-msg">
+                        Link must have maximum 2100 charachters</p>
+                <p *ngIf="(links.controls[i].hasError('invalidLink', 'link')) &&
+                        (links.controls[i].get('link')?.touched ||
+                            links.controls[i].get('link')?.dirty)"
+                        class="error-msg">
+                      Must start with http</p>
+              </div>
+              <div class="col-md-12">
+                      <div class="add-delete-btn-block">
+                        <button type="submit" class="btn btn-success hp-link-btn" [disabled]="links.controls[i].invalid" (click)="addHyperLink()">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                          </svg>
+                        </button>
+                        <button type="button" class="btn btn-info hp-link-btn" (click)="refreshHyperLink(i)">
+                          <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger hp-link-btn" (click)="removeHyperLink(i)" *ngIf="i > 0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-octagon" viewBox="0 0 16 16">
+                            <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+          </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-xs-12">
+        <button type="submit" [disabled]="!formBook.valid || (!extension || photoName === null)"
+                  class="btn btn-outline-light btn-book-submit" >
+                Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
